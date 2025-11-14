@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { SushiSpotsService, SushiSpot } from '../../services/sushi-spots.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sushi-popular-grid',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './sushi-popular-grid.component.html',
   styleUrls: ['./sushi-popular-grid.component.css']
 })

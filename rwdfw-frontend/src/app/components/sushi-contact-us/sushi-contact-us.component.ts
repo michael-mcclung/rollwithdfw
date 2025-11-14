@@ -1,17 +1,11 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sushi-contact-us',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <p>
-      sushi-contact-us works!
-    </p>
-  `,
-  styles: ``,
+  templateUrl: './sushi-contact-us.component.html',
+  styleUrls: ['./sushi-contact-us.component.css']
 })
-export class SushiContactUsComponent {
-
-}
+export class SushiContactUsComponent { }
