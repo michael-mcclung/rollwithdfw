@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SushiSpotsService, SushiSpot } from '../../services/sushi-spots.service';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 interface Spot {
   name: string;
@@ -14,46 +15,41 @@ interface Spot {
 @Component({
   selector: 'app-sushi-popular-grid',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './sushi-popular-grid.component.html',
   styleUrls: ['./sushi-popular-grid.component.css']
 })
 
-export class SushiPopularGridComponent {
+export class SushiPopularGridComponent implements OnInit {
   spots: Spot[] = [];
   filteredSpots: Spot[] = [];
-
+  tags: string[] = [];
+  activeTag: string | null = null;
   isLoading = true;
   hasError = false;
 
-  tags: string[] = [];
-  activeTag: string | null = null;
-
-  constructor(private spotsService: SushiSpotsService) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.loadSpots();
+    this.http.get<Spot[]>('assets/data/rollwithdfw-spots.json').subscribe({
+      next: (data) => {
+        console.log('Sushi spots data loaded:', data);
+        this.spots = data;
+        this.tags = this.extractTags(data);
+        this.filteredSpots = data;
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Error loading sushi spots:', error);
+        this.hasError = true;
+        this.isLoading = false;
+      }
+    });
   }
 
-  loadSpots() {
-    this.isLoading = true;
-    this.hasError = false;
-
-    // Fake data for now — replace with your JSON/http
-    this.spots = [
-      {
-        name: 'Sushi Sake DFW',
-        area: 'Uptown Dallas',
-        highlight: 'Best spicy tuna rolls for late nights.',
-        tags: ['#DateNightDFW', '#LateNightDFW'],
-        rating: 4.7,
-        price: '$$'
-      }
-    ];
-
-    this.tags = ['#DateNightDFW', '#CheapEats', '#LateNightDFW'];
-    this.filteredSpots = this.spots;
-    this.isLoading = false;
+  extractTags(spots: Spot[]) {
+    const all = spots.flatMap(s => s.tags);
+    return Array.from(new Set(all));
   }
 
   filterByTag(tag: string) {
