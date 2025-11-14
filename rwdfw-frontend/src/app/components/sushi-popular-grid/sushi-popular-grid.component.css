@@ -1,0 +1,75 @@
+/* Tag bar at top */
+.tag-bar {
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag-chip {
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: #374151;
+    transition: background 0.12s ease, border 0.12s ease, transform 0.12s ease,
+        box-shadow 0.12s ease;
+}
+
+.tag-chip.active {
+    background: linear-gradient(135deg, #f97316, #fb7185);
+    border-color: transparent;
+    color: #ffffff;
+    box-shadow: 0 8px 18px rgba(248, 113, 113, 0.35);
+    transform: translateY(-1px);
+}
+
+/* Inline tags under each card */
+.tags-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.45rem;
+}
+
+.tag-pill {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(249, 115, 22, 0.08);
+    color: #c2410c;
+}
+
+/* Status / empty states */
+.status {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.status.error {
+    color: #b91c1c;
+}
+
+.empty {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* Respect small screens */
+@media (max-width: 600px) {
+    .tag-bar {
+        gap: 0.4rem;
+    }
+
+    .tag-chip {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.7rem;
+    }
+}

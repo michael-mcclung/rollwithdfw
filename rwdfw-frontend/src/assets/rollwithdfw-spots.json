@@ -1,0 +1,48 @@
+[
+    {
+        "name": "Tokyo Drift Sushi",
+        "area": "Deep Ellum, Dallas",
+        "rating": 4.8,
+        "tags": [
+            "#RollWithDFW",
+            "#BestOverall",
+            "#LateNightDFW"
+        ],
+        "price": "$$",
+        "highlight": "Creative rolls, ultra-fresh fish, and a chill late-night vibe."
+    },
+    {
+        "name": "Umi on the Lake",
+        "area": "Lakefront, Fort Worth",
+        "rating": 4.7,
+        "tags": [
+            "#DateNightDFW",
+            "#OmakaseTX"
+        ],
+        "price": "$$$",
+        "highlight": "Omakase-style chef’s menu with perfect sunset views."
+    },
+    {
+        "name": "Roll On Texas Express",
+        "area": "Plano",
+        "rating": 4.6,
+        "tags": [
+            "#CheapEats",
+            "#Lunch",
+            "#RollWithDFW"
+        ],
+        "price": "$",
+        "highlight": "Fast, affordable, and legit nigiri for your lunch break."
+    },
+    {
+        "name": "Sakura Street Bar",
+        "area": "Uptown, Dallas",
+        "rating": 4.5,
+        "tags": [
+            "#LateNightDFW",
+            "#Vibes"
+        ],
+        "price": "$$",
+        "highlight": "Lofi beats, small plates, and sake flights to explore."
+    }
+]

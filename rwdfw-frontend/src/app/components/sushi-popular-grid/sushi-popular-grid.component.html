@@ -1,26 +1,57 @@
 <section class="grid-section">
     <div class="section-header">
         <h2>RollWithDFW Hot List</h2>
-        <p>Tap into tags like #DateNightDFW, #CheapEats, and #LateNightDFW to find your next roll.</p>
+        <p>
+            Use tags like <strong>#DateNightDFW</strong>, <strong>#CheapEats</strong>, and
+            <strong>#LateNightDFW</strong> to find your next roll.
+        </p>
     </div>
 
-    <div class="grid">
-        <article class="card" *ngFor="let spot of spots">
+    <!-- TAG BAR -->
+    <div class="tag-bar" *ngIf="tags.length > 0">
+        <button *ngFor="let tag of tags" class="tag-chip" [class.active]="tag === activeTag" (click)="filterByTag(tag)">
+            {{ tag }}
+        </button>
+    </div>
+
+    <!-- LOADING / ERROR STATES -->
+    <div class="status" *ngIf="isLoading">
+        Loading #RollWithDFW spots...
+    </div>
+
+    <div class="status error" *ngIf="!isLoading && hasError">
+        Could not load spots. Try refreshing or check your JSON path.
+    </div>
+
+    <!-- GRID -->
+    <div class="grid" *ngIf="!isLoading && !hasError">
+        <article class="card" *ngFor="let spot of filteredSpots">
             <div class="card-header">
                 <h3>{{ spot.name }}</h3>
-                <span class="tag">{{ spot.tag }}</span>
             </div>
 
             <p class="area">{{ spot.area }}</p>
 
             <p class="highlight">{{ spot.highlight }}</p>
 
+            <div class="tags-inline">
+                <span class="tag-pill" *ngFor="let t of spot.tags">
+                    {{ t }}
+                </span>
+            </div>
+
             <div class="meta">
                 <span class="rating">⭐ {{ spot.rating }}</span>
                 <span class="price">{{ spot.price }}</span>
             </div>
 
-            <button class="card-btn">View #RollWithDFW review</button>
+            <button class="card-btn">
+                View full #RollWithDFW review
+            </button>
         </article>
+
+        <div class="empty" *ngIf="filteredSpots.length === 0 && !isLoading && !hasError">
+            No spots match {{ activeTag }} yet. Nominate one below 👇
+        </div>
     </div>
 </section>
