@@ -1,0 +1,24 @@
+<section class="review-strip">
+    <div class="review-inner">
+        <div class="review-heading">
+            <h2>DFW foodies roll with us</h2>
+            <p>
+                #RollWithDFW is built by locals who actually care about rice texture, fish quality,
+                and whether the vibe matches the hype.
+            </p>
+        </div>
+
+        <div class="review-list">
+            <article class="review-card" *ngFor="let r of reviews">
+                <p class="quote">“{{ r.quote }}”</p>
+                <div class="reviewer">
+                    <div class="avatar">{{ r.name[0] }}</div>
+                    <div>
+                        <strong>{{ r.name }}</strong>
+                        <span>{{ r.label }}</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>

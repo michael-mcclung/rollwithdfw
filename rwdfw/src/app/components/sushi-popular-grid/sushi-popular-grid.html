@@ -1,0 +1,26 @@
+<section class="grid-section">
+    <div class="section-header">
+        <h2>RollWithDFW Hot List</h2>
+        <p>Tap into tags like #DateNightDFW, #CheapEats, and #LateNightDFW to find your next roll.</p>
+    </div>
+
+    <div class="grid">
+        <article class="card" *ngFor="let spot of spots">
+            <div class="card-header">
+                <h3>{{ spot.name }}</h3>
+                <span class="tag">{{ spot.tag }}</span>
+            </div>
+
+            <p class="area">{{ spot.area }}</p>
+
+            <p class="highlight">{{ spot.highlight }}</p>
+
+            <div class="meta">
+                <span class="rating">⭐ {{ spot.rating }}</span>
+                <span class="price">{{ spot.price }}</span>
+            </div>
+
+            <button class="card-btn">View #RollWithDFW review</button>
+        </article>
+    </div>
+</section>
