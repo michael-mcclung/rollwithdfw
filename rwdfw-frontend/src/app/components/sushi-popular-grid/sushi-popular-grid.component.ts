@@ -2,6 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { SushiSpotsService, SushiSpot } from '../../services/sushi-spots.service';
 import { CommonModule } from '@angular/common';
 
+interface Spot {
+  name: string;
+  area: string;
+  highlight: string;
+  tags: string[];
+  rating: number;
+  price: string;
+}
+
 @Component({
   selector: 'app-sushi-popular-grid',
   standalone: true,
@@ -9,46 +18,49 @@ import { CommonModule } from '@angular/common';
   templateUrl: './sushi-popular-grid.component.html',
   styleUrls: ['./sushi-popular-grid.component.css']
 })
-export class SushiPopularGridComponent implements OnInit {
-  spots: SushiSpot[] = [];
-  filteredSpots: SushiSpot[] = [];
-  tags: string[] = [];
-  activeTag: string = 'All';
+
+export class SushiPopularGridComponent {
+  spots: Spot[] = [];
+  filteredSpots: Spot[] = [];
 
   isLoading = true;
   hasError = false;
 
+  tags: string[] = [];
+  activeTag: string | null = null;
+
   constructor(private spotsService: SushiSpotsService) { }
 
-  ngOnInit(): void {
-    this.spotsService.getSpots().subscribe({
-      next: (spots) => {
-        this.spots = spots;
-        this.filteredSpots = spots;
-        this.tags = this.buildTagList(spots);
-        this.isLoading = false;
-      },
-      error: () => {
-        this.isLoading = false;
-        this.hasError = true;
+  ngOnInit() {
+    this.loadSpots();
+  }
+
+  loadSpots() {
+    this.isLoading = true;
+    this.hasError = false;
+
+    // Fake data for now — replace with your JSON/http
+    this.spots = [
+      {
+        name: 'Sushi Sake DFW',
+        area: 'Uptown Dallas',
+        highlight: 'Best spicy tuna rolls for late nights.',
+        tags: ['#DateNightDFW', '#LateNightDFW'],
+        rating: 4.7,
+        price: '$$'
       }
-    });
+    ];
+
+    this.tags = ['#DateNightDFW', '#CheapEats', '#LateNightDFW'];
+    this.filteredSpots = this.spots;
+    this.isLoading = false;
   }
 
-  buildTagList(spots: SushiSpot[]): string[] {
-    const set = new Set<string>();
-    spots.forEach(spot => {
-      spot.tags.forEach(tag => set.add(tag));
-    });
-    return ['All', ...Array.from(set)];
-  }
-
-  filterByTag(tag: string): void {
+  filterByTag(tag: string) {
     this.activeTag = tag;
-    if (tag === 'All') {
-      this.filteredSpots = this.spots;
-    } else {
-      this.filteredSpots = this.spots.filter(spot => spot.tags.includes(tag));
-    }
+    this.filteredSpots =
+      tag === 'ALL' || !tag
+        ? this.spots
+        : this.spots.filter(s => s.tags.includes(tag));
   }
 }

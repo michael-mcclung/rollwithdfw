@@ -8,7 +8,7 @@
     </div>
 
     <!-- TAG BAR -->
-    <div class="tag-bar" *ngIf="tags.length > 0">
+    <div class="tag-bar" *ngIf="tags && tags.length > 0">
         <button *ngFor="let tag of tags" class="tag-chip" [class.active]="tag === activeTag" (click)="filterByTag(tag)">
             {{ tag }}
         </button>
@@ -50,7 +50,7 @@
             </button>
         </article>
 
-        <div class="empty" *ngIf="filteredSpots.length === 0 && !isLoading && !hasError">
+        <div class="empty" *ngIf="filteredSpots && filteredSpots.length === 0 && !isLoading && !hasError">
             No spots match {{ activeTag }} yet. Nominate one below 👇
         </div>
     </div>
