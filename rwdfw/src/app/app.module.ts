@@ -2,24 +2,26 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
-import { HomePageComponent } from './components/home-page/home-page.ts';
-import { RollWithDfwHeroComponent } from './rollwithdfw-hero/rollwithdfw-hero.component.ts';
-import { SushiHighlightGridComponent } from './sushi-highlight-grid/sushi-highlight-grid.component';
-import { SushiReviewStripComponent } from './sushi-review-strip/sushi-review-strip.component';
-import { SushiContactComponent } from './sushi-contact/sushi-contact.component';
+
+// adjust paths to match the sidebar in your screenshot
+import { HomePageComponent } from '../components/home-page/home-page.component';
+import { RollWithDfwHeroComponent } from '../components/rollwithdfw-hero/rollwithdfw-hero.component';
+import { SushiContactUsComponent } from '../components/sushi-contact-us/sushi-contact-us.component';
+import { SushiPopularGridComponent } from '../components/sushi-popular-grid/sushi-popular-grid.component';
+import { SushiReviewStripComponent } from '../components/sushi-review-strip/sushi-review-strip.component';
 
 @NgModule({
     declarations: [
         HomePageComponent,
         RollWithDfwHeroComponent,
-        SushiHighlightGridComponent,
-        SushiReviewStripComponent,
-        SushiContactComponent
+        SushiContactUsComponent,
+        SushiPopularGridComponent,
+        SushiReviewStripComponent
     ],
-    imports: [›
+    imports: [
         BrowserModule,
         HttpClientModule
     ],
-    providers: [],
+    providers: []
 })
 export class AppModule { }

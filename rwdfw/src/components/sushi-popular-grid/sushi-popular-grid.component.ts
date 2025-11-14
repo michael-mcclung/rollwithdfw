@@ -12,10 +12,10 @@ interface SushiSpot {
 
 @Component({
   selector: 'app-sushi-highlight-grid',
-  templateUrl: './sushi-popular-grid.html',
-  styleUrls: ['./sushi-popular-grid.css']
+  templateUrl: './sushi-popular-grid.component.html',
+  styleUrls: ['./sushi-popular-grid.component.css']
 })
-export class SushiHighlightGridComponent {
+export class SushiPopularGridComponent {
   spots: SushiSpot[] = [
     {
       name: 'Tokyo Drift Sushi',

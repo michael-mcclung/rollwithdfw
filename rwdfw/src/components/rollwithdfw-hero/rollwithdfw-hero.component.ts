@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-rollwithdfw-hero',
-  templateUrl: './rollwithdfw-hero.html',
-  styleUrls: ['./rollwithdfw-hero.css']
+  templateUrl: './rollwithdfw-hero.component.html',
+  styleUrls: ['./rollwithdfw-hero.component.css']
 })
 export class RollWithDfwHeroComponent { }

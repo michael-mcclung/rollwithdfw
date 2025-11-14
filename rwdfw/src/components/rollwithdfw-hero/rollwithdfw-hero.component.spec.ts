@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RollwithdfwHero } from './rollwithdfw-hero';
+import { RollWithDfwHeroComponent } from './rollwithdfw-hero.component';
 
 describe('RollwithdfwHero', () => {
-  let component: RollwithdfwHero;
-  let fixture: ComponentFixture<RollwithdfwHero>;
+  let component: RollWithDfwHeroComponent;
+  let fixture: ComponentFixture<RollWithDfwHeroComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RollwithdfwHero]
+      imports: [RollWithDfwHeroComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
-    fixture = TestBed.createComponent(RollwithdfwHero);
+    fixture = TestBed.createComponent(RollWithDfwHeroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
