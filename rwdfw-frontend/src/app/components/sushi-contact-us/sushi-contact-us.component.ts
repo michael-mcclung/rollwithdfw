@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sushi-contact-us',
+  standalone: true,
+  imports: [CommonModule],
   template: `
     <p>
       sushi-contact-us works!

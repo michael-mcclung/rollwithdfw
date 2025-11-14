@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sushi-review-strip',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './sushi-review-strip.component.html',
   styleUrls: ['./sushi-review-strip.component.css']
 })

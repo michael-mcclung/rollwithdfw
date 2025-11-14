@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 interface SushiSpot {
   name: string;
@@ -12,6 +11,8 @@ interface SushiSpot {
 
 @Component({
   selector: 'app-sushi-highlight-grid',
+  standalone: true,
+  imports: [],
   templateUrl: './sushi-popular-grid.component.html',
   styleUrls: ['./sushi-popular-grid.component.css']
 })
