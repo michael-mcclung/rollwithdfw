@@ -9,16 +9,18 @@ import com.rollwithdfw.dto.SubmissionRequest;
 
 @Service
 public class SushSubmissionEmailService {
-    private final JavaMailSender mailSender;
 
-    @Value("${submission.recipient.email}")
-    private String recipientEmail;
+    private final JavaMailSender mailSender;
 
     public SushSubmissionEmailService(JavaMailSender mailSender) {
         this.mailSender = mailSender;
     }
 
+    @Value("${submission.recipient.email}")
+    private String recipientEmail;
+
     public void sendSubmissionEmail(SubmissionRequest submissionRequest) {
+
         // Implementation for sending email using mailSender
         // Construct email content and send it to recipientEmail
         SimpleMailMessage message = new SimpleMailMessage();

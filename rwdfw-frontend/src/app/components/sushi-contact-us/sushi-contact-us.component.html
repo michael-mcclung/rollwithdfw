@@ -8,12 +8,33 @@
             </p>
         </div>
 
-        <form class="contact-form">
-            <input type="text" placeholder="Restaurant name" />
-            <input type="text" placeholder="City / Area (e.g. Deep Ellum, Plano)" />
-            <input type="email" placeholder="Your email (optional)" />
-            <textarea rows="3" placeholder="Why should it be tagged #RollWithDFW?"></textarea>
-            <button type="submit">Submit restaurant</button>
+        <!-- Angular form -->
+        <form class="contact-form" [formGroup]="submissionForm" (ngSubmit)="onSubmit()">
+
+            <input type="text" formControlName="restaurant" placeholder="Restaurant name" required />
+
+            <input type="text" formControlName="area" placeholder="City / Area (e.g. Deep Ellum, Plano)" required />
+
+            <input type="email" formControlName="email" placeholder="Your email (optional)" />
+
+            <textarea rows="3" formControlName="message" placeholder="Why should it be tagged #RollWithDFW?"
+                required></textarea>
+
+            <button type="submit" [disabled]="sending || submissionForm.invalid">
+                <span *ngIf="!sending">Submit restaurant</span>
+                <span *ngIf="sending">Sending…</span>
+            </button>
+
+            <!-- Success message -->
+            <p *ngIf="success" class="success-msg">
+                🎉 Your nomination has been submitted. Thanks for helping #RollWithDFW!
+            </p>
+
+            <!-- Error message -->
+            <p *ngIf="error" class="error-msg">
+                ❌ Something went wrong — please try again.
+            </p>
+
         </form>
     </div>
 </section>

@@ -26,5 +26,17 @@ public class SushiSpot {
     @ElementCollection
     private List<String> tags;
 
+    // constructors (default + parameterized)
+    public SushiSpot() {
+    }
+
+    public SushiSpot(String name, String area, double rating, String price, String highlight, List<String> tags) {
+        this.name = name;
+        this.area = area;
+        this.rating = rating;
+        this.price = price;
+        this.highlight = highlight;
+        this.tags = tags;
+    }
     // getters + setters using Lombok @Data)
 }
