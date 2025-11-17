@@ -27,4 +27,18 @@ public class SushiSubmissionController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PostMapping
+    public ResponseEntity<Void> createNomination(@RequestBody SubmissionRequest request) {
+
+        // TODO: Save to DB or send email notification
+        // Example: log for now
+        System.out.println("New nomination:");
+        System.out.println("Restaurant: " + request.getResturant());
+        System.out.println("Area: " + request.getArea());
+        System.out.println("Email: " + request.getEmail());
+        System.out.println("Message: " + request.getDetails());
+
+        return ResponseEntity.ok().build();
+    }
+
 }

@@ -28,11 +28,12 @@ public class SushSubmissionEmailService {
         // Construct email content and send it to recipientEmail
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(recipientEmail);
-        message.setSubject("New contact from " + submissionRequest.getName());
+        message.setSubject("New contact from " + submissionRequest.getEmail());
         message.setText(recipientEmail + "\n\n" +
-                "Name: " + submissionRequest.getName() + "\n" +
+                "Resturant: " + submissionRequest.getResturant() + "\n" +
+                "Area: " + submissionRequest.getArea() + "\n" +
                 "Email: " + submissionRequest.getEmail() + "\n" +
-                "Phone: " + submissionRequest.getDetails());
+                "Message: " + submissionRequest.getDetails());
         mailSender.send(message);
     }
 }
