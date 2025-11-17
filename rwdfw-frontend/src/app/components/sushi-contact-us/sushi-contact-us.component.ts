@@ -11,37 +11,48 @@ import { SubmissionRequest } from '../../services/sushi-contact.service';
   styleUrls: ['./sushi-contact-us.component.css']
 })
 export class SushiContactUsComponent {
+  submissionForm: FormGroup;
   sending = false
   success = false;
   error = false;
 
-  submissionForm!: FormGroup;
-
-  constructor(private fb: FormBuilder, private submissionService: SubmissionRequest) {
+  constructor(
+    private fb: FormBuilder,
+    private submissionService: SubmissionRequest
+  ) {
     this.submissionForm = this.fb.group({
-      name: ['', Validators.required],
+      restaurant: ['', [Validators.required]],
+      area: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       message: ['', Validators.required]
     });
   }
 
-  onSubmit() {
-    if (this.submissionForm.valid) {
-      this.sending = true;
-      this.success = false;
-      this.error = false;
-
-      this.submissionService.submitContactForm(this.submissionForm.value as any).subscribe({
-        next: () => {
-          this.sending = false;
-          this.success = true;
-          this.submissionForm.reset();
-        },
-        error: () => {
-          this.sending = false;
-          this.error = true;
-        }
-      });
+  onSubmit(): void {
+    if (this.submissionForm.invalid || this.sending) {
+      this.submissionForm.markAllAsTouched();
+      return;
     }
+
+    this.sending = true;
+    this.success = false;
+    this.error = false;
+
+    const payload = this.submissionForm.value; // { restaurant, area, email, message }
+
+    this.submissionService.submitContactForm(payload).subscribe({
+      next: () => {
+        this.sending = false;
+        this.success = true;
+        this.error = false;
+        this.submissionForm.reset();
+      },
+      error: (err) => {
+        console.error('Nomination submit failed', err);
+        this.sending = false;
+        this.success = false;
+        this.error = true;
+      }
+    });
   }
 }

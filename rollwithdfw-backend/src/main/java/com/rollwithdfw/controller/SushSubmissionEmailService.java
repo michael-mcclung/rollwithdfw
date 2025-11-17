@@ -16,6 +16,9 @@ public class SushSubmissionEmailService {
         this.mailSender = mailSender;
     }
 
+    /**
+     *
+     */
     @Value("${submission.recipient.email}")
     private String recipientEmail;
 
