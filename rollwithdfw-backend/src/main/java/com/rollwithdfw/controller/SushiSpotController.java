@@ -1,10 +1,9 @@
 package com.rollwithdfw.controller;
 
+import java.util.List;
 import com.rollwithdfw.model.SushiSpot;
 import com.rollwithdfw.repository.SushiSpotRepository;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/spots")
