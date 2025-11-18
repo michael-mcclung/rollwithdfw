@@ -13,11 +13,11 @@ export interface SubmissionRequestPayload {
 @Injectable({ providedIn: 'root' })
 export class SubmissionRequest {
 
-    private apiUrl = '${environment.apiBaseUrl}/api/sushi-submissions';
+    private apiBaseUrl = '${environment.apiBaseUrl}/api/submissions/sushi';
 
     constructor(private http: HttpClient) { }
 
     submitContactForm(payload: SubmissionRequestPayload): Observable<any> {
-        return this.http.post(this.apiUrl, payload);
+        return this.http.post(this.apiBaseUrl, payload);
     }
 }
