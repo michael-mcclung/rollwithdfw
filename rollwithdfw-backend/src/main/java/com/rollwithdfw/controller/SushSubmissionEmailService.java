@@ -10,17 +10,14 @@ import com.rollwithdfw.dto.SubmissionRequest;
 @Service
 public class SushSubmissionEmailService {
 
+    @Value("${submission.recipient.email:}")
+    private String recipientEmail;
+
     private final JavaMailSender mailSender;
 
     public SushSubmissionEmailService(JavaMailSender mailSender) {
         this.mailSender = mailSender;
     }
-
-    /**
-     *
-     */
-    @Value("${submission.recipient.email}")
-    private String recipientEmail;
 
     public void sendSubmissionEmail(SubmissionRequest submissionRequest) {
 
@@ -35,5 +32,11 @@ public class SushSubmissionEmailService {
                 "Email: " + submissionRequest.getEmail() + "\n" +
                 "Message: " + submissionRequest.getDetails());
         mailSender.send(message);
+
+        if (recipientEmail == null || recipientEmail.isBlank()) {
+            System.out.println("No submission.recipient.email configured; skipping email send");
+            return;
+        }
+
     }
 }
