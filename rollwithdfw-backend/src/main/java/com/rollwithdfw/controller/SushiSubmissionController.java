@@ -12,7 +12,7 @@ import com.rollwithdfw.dto.SubmissionRequest;
 
 @RestController
 @RequestMapping("/api/submissions")
-@CrossOrigin(origins = "http://rollwithdfw.netlify.app/api/")
+@CrossOrigin(origins = "http://rollwithdfw.netlify.app")
 public class SushiSubmissionController {
 
     private final SushSubmissionEmailService emailService;
