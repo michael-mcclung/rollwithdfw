@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rollwithdfw.dto.SubmissionRequest;
 
 @RestController
-@RequestMapping("/api/submissions/sushi")
+@RequestMapping("/api/submissions")
 @CrossOrigin(origins = "http://rollwithdfw.netlify.app")
 public class SushiSubmissionController {
 
@@ -21,13 +21,13 @@ public class SushiSubmissionController {
         this.emailService = emailService;
     }
 
-    @PostMapping
+    @PostMapping("/sushi")
     public ResponseEntity<Void> handleSubmission(@RequestBody SubmissionRequest submissionRequest) {
         emailService.sendSubmissionEmail(submissionRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping("/sushi/nominations")
     public ResponseEntity<Void> createNomination(@RequestBody SubmissionRequest request) {
 
         // TODO: Save to DB or send email notification
