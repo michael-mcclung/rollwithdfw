@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { SubmissionRequest } from '../../services/sushi-contact.service';
+import { SubmissionRequestPayload, SubmissionRequest } from '../../services/sushi-contact.service';
 
 @Component({
   selector: 'app-sushi-contact-us',
@@ -12,18 +12,19 @@ import { SubmissionRequest } from '../../services/sushi-contact.service';
 })
 export class SushiContactUsComponent {
   submissionForm: FormGroup;
-  sending = false
+  sending = false;
   success = false;
   error = false;
 
   constructor(
     private fb: FormBuilder,
-    private submissionService: SubmissionRequest
+    private submissionService: SubmissionRequest   // inject the concrete service implementation
   ) {
     this.submissionForm = this.fb.group({
       restaurant: ['', [Validators.required]],
       area: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      // email is optional in your HTML text, so make it optional here too:
+      email: ['', [Validators.email]],
       message: ['', Validators.required]
     });
   }
@@ -38,7 +39,15 @@ export class SushiContactUsComponent {
     this.success = false;
     this.error = false;
 
-    const payload = this.submissionForm.value; // { restaurant, area, email, message }
+    const formValue = this.submissionForm.value;
+    const payload: SubmissionRequestPayload = {
+      // server expects "resturant" (note spelling) — map from our "restaurant"
+      resturant: formValue.restaurant,
+      area: formValue.area,
+      message: formValue.message,
+      // only include email if provided
+      ...(formValue.email ? { email: formValue.email } : {})
+    };
 
     this.submissionService.submitContactForm(payload).subscribe({
       next: () => {

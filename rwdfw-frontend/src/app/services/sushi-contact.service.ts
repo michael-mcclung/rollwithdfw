@@ -18,6 +18,6 @@ export class SubmissionRequest {
     constructor(private http: HttpClient) { }
 
     submitContactForm(payload: SubmissionRequestPayload): Observable<any> {
-        return this.http.post(this.apiBaseUrl, payload);
+        return this.http.post('${this.apiBaseUrl}/api/v1/submissions', payload);
     }
 }

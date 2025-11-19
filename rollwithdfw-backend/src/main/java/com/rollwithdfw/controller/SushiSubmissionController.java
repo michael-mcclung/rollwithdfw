@@ -1,6 +1,5 @@
 package com.rollwithdfw.controller;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +30,6 @@ public class SushiSubmissionController {
         System.out.println("Area: " + submissionRequest.getArea());
         System.out.println("Email: " + submissionRequest.getEmail());
         System.out.println("Message: " + submissionRequest.getDetails());
-        return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.ok().build();
     }
 }
