@@ -26,8 +26,6 @@ public class SushiSubmissionController {
 
         emailService.sendSubmissionEmail(submissionRequest);
 
-        // TODO: Save to DB or send email notification
-        // Example: log for now
         System.out.println("New nomination:");
         System.out.println("Restaurant: " + submissionRequest.getResturant());
         System.out.println("Area: " + submissionRequest.getArea());

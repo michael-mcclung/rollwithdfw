@@ -68,4 +68,5 @@ public class SushSubmissionEmailService {
     private String safe(String s) {
         return s == null ? "" : s;
     }
+
 }
