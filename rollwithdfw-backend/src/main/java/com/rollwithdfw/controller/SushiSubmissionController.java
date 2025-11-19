@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rollwithdfw.dto.SubmissionRequest;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/")
+@CrossOrigin(origins = "https://www.rollwithdfw.com")
 public class SushiSubmissionController {
 
     private final SushSubmissionEmailService emailService;
