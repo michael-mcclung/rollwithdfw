@@ -13,7 +13,7 @@ export interface SubmissionRequestPayload {
 @Injectable({ providedIn: 'root' })
 export class SubmissionRequest {
 
-    private apiBaseUrl = 'https://rollwithdfw.onrender.com/api/submissions/sushi';
+    private apiBaseUrl = environment.apiBaseUrl + '/submissions';
 
     constructor(private http: HttpClient) { }
 
