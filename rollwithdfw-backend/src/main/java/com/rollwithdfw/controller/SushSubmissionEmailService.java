@@ -1,42 +1,71 @@
 package com.rollwithdfw.controller;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.MailParseException;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import com.rollwithdfw.dto.SubmissionRequest;
 
-@Service
-public class SushSubmissionEmailService {
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
+import lombok.RequiredArgsConstructor;
 
-    @Value("${submission.recipient.email:}")
-    private String recipientEmail;
+@Service
+@RequiredArgsConstructor
+public class SushSubmissionEmailService {
 
     private final JavaMailSender mailSender;
 
-    public SushSubmissionEmailService(JavaMailSender mailSender) {
-        this.mailSender = mailSender;
+    // ideally from env var
+    @Value("${submission.recipient.email}")
+    private String notificationToAddress;
+
+    @Value("${spring.mail.username}")
+    private String fromAddress; // same as SMTP username
+
+    public void sendSubmissionEmail(SubmissionRequest request) {
+        MimeMessage message = mailSender.createMimeMessage();
+
+        try {
+            MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+
+            // Use your own valid addresses
+            helper.setFrom(fromAddress);
+            helper.setTo(notificationToAddress);
+
+            // Let you hit "Reply" to answer the user
+            if (request.getEmail() != null && !request.getEmail().isBlank()) {
+                helper.setReplyTo(request.getEmail().trim());
+            }
+
+            helper.setSubject("New sushi nomination from " + safe(request.getArea()));
+
+            String body = """
+                    New sushi nomination submitted:
+
+                    Restaurant: %s
+                    Area: %s
+                    Email: %s
+                    Message:
+                    %s
+                    """.formatted(
+                    safe(request.getResturant()),
+                    safe(request.getArea()),
+                    safe(request.getEmail()),
+                    safe(request.getDetails()));
+
+            helper.setText(body, false);
+
+            mailSender.send(message);
+        } catch (MessagingException e) {
+            // Let Spring wrap it, but log the real cause
+            throw new MailParseException("Failed to construct nomination email", e);
+        }
     }
 
-    public void sendSubmissionEmail(SubmissionRequest submissionRequest) {
-
-        // Implementation for sending email using mailSender
-        // Construct email content and send it to recipientEmail
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(recipientEmail);
-        message.setSubject("New contact from " + submissionRequest.getEmail());
-        message.setText(recipientEmail + "\n\n" +
-                "Resturant: " + submissionRequest.getResturant() + "\n" +
-                "Area: " + submissionRequest.getArea() + "\n" +
-                "Email: " + submissionRequest.getEmail() + "\n" +
-                "Message: " + submissionRequest.getDetails());
-        mailSender.send(message);
-
-        if (recipientEmail == null || recipientEmail.isBlank()) {
-            System.out.println("No submission.recipient.email configured; skipping email send");
-            return;
-        }
-
+    private String safe(String s) {
+        return s == null ? "" : s;
     }
 }
