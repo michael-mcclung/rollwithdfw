@@ -1,5 +1,22 @@
-HELP.md
+# Maven target folder
 target/
+
+# Logs
+*.log
+
+# OS/filesystem junk
+.DS_Store
+
+# IntelliJ / VSCode
+.idea/
+.vscode/
+
+# Application config secrets
+src/main/resources/application-local.properties
+src/main/resources/application-dev.properties
+src/main/resources/application-test.properties
+
+HELP.md
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -14,7 +31,6 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
 *.iws
 *.iml
 *.ipr
@@ -28,6 +44,3 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-
-### VS Code ###
-.vscode/
