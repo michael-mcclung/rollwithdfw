@@ -13,11 +13,9 @@ export interface SubmissionRequestPayload {
 @Injectable({ providedIn: 'root' })
 export class SubmissionRequest {
 
-    private apiBaseUrl = environment.apiBaseUrl + '/submissions';
-
     constructor(private http: HttpClient) { }
 
     submitContactForm(payload: SubmissionRequestPayload): Observable<any> {
-        return this.http.post(this.apiBaseUrl, payload);
+        return this.http.post('${environment.apiBaseUrl}/api/v1/submissions', payload);
     }
 }
