@@ -17,13 +17,13 @@ export class SushiContactUsComponent {
   error = false;
 
   constructor(
-    private fb: FormBuilder,
+    private formBuilder: FormBuilder,
     private submissionService: SubmissionRequest   // inject the concrete service implementation
   ) {
-    this.submissionForm = this.fb.group({
+    this.submissionForm = this.formBuilder.group({
+      fullName: ['', Validators.required],
       restaurant: ['', [Validators.required]],
       area: ['', Validators.required],
-      // email is optional in your HTML text, so make it optional here too:
       email: ['', [Validators.email]],
       message: ['', Validators.required]
     });
@@ -41,6 +41,7 @@ export class SushiContactUsComponent {
 
     const formValue = this.submissionForm.value;
     const payload: SubmissionRequestPayload = {
+      fullName: formValue.fullName,
       // server expects "resturant" (note spelling) — map from our "restaurant"
       resturant: formValue.restaurant,
       area: formValue.area,

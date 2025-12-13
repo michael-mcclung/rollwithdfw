@@ -1,4 +1,4 @@
-package com.rollwithdfw.controller;
+package com.rollwithdfw.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.MailParseException;
@@ -22,17 +22,14 @@ public class SushSubmissionEmailService {
     @Value("${submission.recipient.email}")
     private String notificationToAddress;
 
-    @Value("${spring.mail.username}")
-    private String fromAddress; // same as SMTP username
-
     public void sendSubmissionEmail(SubmissionRequest request) {
-        MimeMessage message = mailSender.createMimeMessage();
-
         try {
+            MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
 
             // Use your own valid addresses
-            helper.setFrom(fromAddress);
+            // same used so email is sent to self
+            helper.setFrom(notificationToAddress);
             helper.setTo(notificationToAddress);
 
             // Let you hit "Reply" to answer the user
@@ -40,16 +37,19 @@ public class SushSubmissionEmailService {
                 helper.setReplyTo(request.getEmail().trim());
             }
 
-            helper.setSubject("New sushi nomination from " + safe(request.getArea()));
+            helper.setSubject(
+                    "New sushi nomination from " +
+                            safe(request.getResturant()) +
+                            safe(request.getArea()));
 
             String body = """
                     New sushi nomination submitted:
 
+                    Full Name: %s
                     Restaurant: %s
                     Area: %s
                     Email: %s
-                    Message:
-                    %s
+                    Message: %s
                     """.formatted(
                     safe(request.getResturant()),
                     safe(request.getArea()),
@@ -57,8 +57,8 @@ public class SushSubmissionEmailService {
                     safe(request.getDetails()));
 
             helper.setText(body, false);
-
             mailSender.send(message);
+
         } catch (MessagingException e) {
             // Let Spring wrap it, but log the real cause
             throw new MailParseException("Failed to construct nomination email", e);
@@ -66,7 +66,7 @@ public class SushSubmissionEmailService {
     }
 
     private String safe(String s) {
-        return s == null ? "" : s;
+        return s == null ? "" : s.trim();
     }
 
 }

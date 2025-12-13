@@ -11,10 +11,10 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 @Configuration
 public class MailConfig {
 
-    @Value("${spring.mail.host:smtp.gmail.com}")
+    @Value("${spring.mail.host}")
     private String host;
 
-    @Value("${spring.mail.port:587}")
+    @Value("${spring.mail.port}")
     private int port;
 
     @Value("${spring.mail.username:}")
