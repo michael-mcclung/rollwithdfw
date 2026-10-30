@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maintenance request — Roll With DFW</title>
+  <meta name="description" content="Submit a non-emergency maintenance request to Roll With DFW, with emergency instructions.">
+  <meta name="theme-color" content="#0B3D4A">
+  <link rel="canonical" href="https://www.rollwithdfw.com/maintenance/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <rect width="64" height="64" rx="12" fill="#0B3D4A"></rect>
+          <path d="M12 40c8-18 16-18 24 0 4-10 8-10 16 0" fill="none" stroke="#F4F7F8" stroke-width="4" stroke-linecap="round"></path>
+          <circle cx="32" cy="22" r="6" fill="#E8A838"></circle>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Roll With DFW</span>
+          <span class="brand-tag">Tenant hub</span>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main" class="site-main">
+    <div class="wrap">
+      <section class="panel emergency" aria-labelledby="emergency-heading">
+        <h2 id="emergency-heading">Emergencies come first</h2>
+        <ul>
+          <li><strong>Fire, a gas smell, or immediate danger: call 911 first.</strong></li>
+          <li>Leave the unsafe area.</li>
+          <li>Only when you are safe, call the emergency repair line:
+            <a class="phone" href="tel:+14697835078">469&#8209;783&#8209;5078</a></li>
+          <li>For urgent repairs that are not a 911 situation, such as a major water leak, call the emergency repair line.</li>
+          <li>Ordinary, non-urgent repairs go through the form on this page.</li>
+        </ul>
+        <p>Do not use this form for emergencies. Submissions are not monitored around the clock.</p>
+      </section>
+
+      <section class="panel" aria-labelledby="form-heading">
+        <h1 id="form-heading" class="page-title">Maintenance request</h1>
+        <p class="lead">Fields marked * are required. Please don't include bank details, passwords, or ID numbers.</p>
+        <form class="form" name="maintenance" method="POST" action="/maintenance/thanks/" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="company">
+          <input type="hidden" name="form-name" value="maintenance">
+          <p class="hp" aria-hidden="true"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+
+          <label for="name">Your name *</label>
+          <input id="name" name="name" type="text" autocomplete="name" required maxlength="100">
+
+          <label for="phone">Phone *</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="30">
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" maxlength="120">
+
+          <label for="address">Property address and unit *</label>
+          <input id="address" name="address" type="text" autocomplete="street-address" required maxlength="200">
+
+          <fieldset>
+            <legend>How urgent is it? *</legend>
+            <label class="choice"><input type="radio" name="urgency" value="Routine" required> Routine, within a few days is fine</label>
+            <label class="choice"><input type="radio" name="urgency" value="Soon"> Soon, it's affecting daily use</label>
+            <label class="choice"><input type="radio" name="urgency" value="Urgent"> Urgent (please also call the emergency repair line)</label>
+          </fieldset>
+
+          <label for="description">What's the problem? *</label>
+          <textarea id="description" name="description" rows="6" required maxlength="3000"></textarea>
+
+          <label for="entry">Permission to enter if you're not home</label>
+          <select id="entry" name="entry">
+            <option value="Contact me first">Contact me first</option>
+            <option value="OK to enter">OK to enter</option>
+          </select>
+
+          <label for="photo">Photo (optional, one image under 5 MB)</label>
+          <input id="photo" name="photo" type="file" accept="image/jpeg,image/png,image/heic,image/webp">
+
+          <button class="btn btn-primary" type="submit">Send request</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Site">
+        <ul class="footer-links">
+          <li><a href="/maintenance/">Maintenance</a></li>
+          <li><a href="/payments/">Payments</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms-of-use/">Terms of Use</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2026 Roll With DFW</p>
+      <p>This site stores no login, banking or payment data.</p>
+    </div>
+  </footer>
+</body>
+</html>
