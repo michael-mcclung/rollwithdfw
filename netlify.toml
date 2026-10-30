@@ -25,6 +25,12 @@
     Cache-Control = "public, max-age=604800"
 
 [[redirects]]
+  from = "/README.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
