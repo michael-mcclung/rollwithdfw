@@ -5,4 +5,12 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://www.rollwithdfw.com/maintenance/</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.rollwithdfw.com/payments/</loc>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>

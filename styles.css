@@ -309,3 +309,122 @@ summary:focus-visible {
 .stack-end {
   margin: 0;
 }
+
+/* Footer links, forms, legal pages */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links a {
+  display: inline-block;
+  padding: 0.35rem 0;
+}
+
+.emergency ul {
+  margin: 0 0 0.75rem;
+  padding-left: 1.2rem;
+}
+
+.emergency li {
+  margin-bottom: 0.45rem;
+}
+
+.form {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.form label,
+.form legend {
+  font-weight: 650;
+  margin-top: 0.6rem;
+}
+
+.form input[type="text"],
+.form input[type="tel"],
+.form input[type="email"],
+.form input[type="file"],
+.form select,
+.form textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.7rem 0.75rem;
+  border: 1.5px solid #8aa3ab;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: var(--ink);
+}
+
+.form input:focus-visible,
+.form select:focus-visible,
+.form textarea:focus-visible,
+.form button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.form fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.form .choice {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+
+.form .choice input {
+  margin-top: 0.3rem;
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.form button {
+  margin-top: 1.1rem;
+}
+
+.hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.legal h2,
+.panel h2 + p {
+  margin-top: 0;
+}
+
+.legal h2 {
+  margin: 1.4rem 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+.legal ul {
+  padding-left: 1.2rem;
+}
+
+.draft-note {
+  background: #fff8e6;
+  border: 2px solid #b7791f;
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin: 0 0 1rem;
+}
+
+.needs-fact {
+  background: #ffe9a8;
+  color: #4a3500;
+  padding: 0 0.2rem;
+  border-radius: 0.2rem;
+}
