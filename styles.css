@@ -1,0 +1,311 @@
+/* Roll With DFW tenant site — mobile-first, WCAG AA */
+:root {
+  --bg: #f4f7f8;
+  --surface: #ffffff;
+  --ink: #102a32;
+  --ink-muted: #3d5a63;
+  --brand: #0b3d4a;
+  --brand-hover: #072f39;
+  --accent: #a84812;
+  --accent-hover: #86390e;
+  --emergency-bg: #fff5f4;
+  --emergency-border: #b42318;
+  --emergency-ink: #7a1a12;
+  --focus: #0b5cab;
+  --radius: 0.75rem;
+  --shadow: 0 1px 2px rgba(16, 42, 50, 0.08), 0 8px 24px rgba(16, 42, 50, 0.06);
+  --max: 40rem;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--brand);
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+a:focus-visible,
+.btn:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -100px;
+  z-index: 100;
+  background: var(--brand);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+.wrap {
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
+
+.site-header {
+  background: var(--brand);
+  color: #f4f7f8;
+  padding: 1.25rem 0 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand:hover {
+  color: inherit;
+}
+
+.brand-mark {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.brand-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.brand-tag {
+  font-size: 0.9rem;
+  color: #d7e4e8;
+}
+
+.site-main {
+  padding: 1.5rem 0 2.5rem;
+}
+
+.intro {
+  margin: 0 0 1.5rem;
+  color: var(--ink-muted);
+  font-size: 1.05rem;
+}
+
+.actions {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0.9rem 1.25rem;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: var(--brand-hover);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background: var(--accent-hover);
+  color: #ffffff;
+}
+
+.btn-outline {
+  background: var(--surface);
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+.btn-outline:hover {
+  background: #e8f1f3;
+  color: var(--brand-hover);
+}
+
+.panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem 1.15rem;
+  margin-bottom: 1.25rem;
+}
+
+.panel h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+  color: var(--brand);
+}
+
+.emergency {
+  background: var(--emergency-bg);
+  border: 2px solid var(--emergency-border);
+  color: var(--emergency-ink);
+}
+
+.emergency h2 {
+  color: var(--emergency-ink);
+  margin-bottom: 0.5rem;
+}
+
+.emergency p {
+  margin: 0 0 0.75rem;
+}
+
+.emergency p:last-child {
+  margin-bottom: 0;
+}
+
+.phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--emergency-ink);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.phone:hover {
+  color: #5c120d;
+  text-decoration: underline;
+}
+
+.faq details {
+  border-bottom: 1px solid #d5e0e4;
+  padding: 0.7rem 0;
+}
+
+.faq details:last-child {
+  border-bottom: 0;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 650;
+  color: var(--ink);
+  list-style-position: outside;
+  padding-left: 0.15rem;
+}
+
+.faq details p {
+  margin: 0.55rem 0 0.2rem;
+  color: var(--ink-muted);
+}
+
+.site-footer {
+  border-top: 1px solid #d5e0e4;
+  padding: 1.25rem 0 2rem;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+
+.site-footer p {
+  margin: 0.35rem 0;
+}
+
+@media (min-width: 640px) {
+  .brand-name {
+    font-size: 1.55rem;
+  }
+
+  .actions {
+    gap: 1rem;
+  }
+
+  .btn {
+    min-height: 3.5rem;
+    font-size: 1.2rem;
+  }
+
+  .panel {
+    padding: 1.5rem;
+  }
+}
+
+.page-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  color: var(--brand);
+}
+
+.lead {
+  margin: 0 0 1.25rem;
+  color: var(--ink-muted);
+}
+
+.stack-end {
+  margin: 0;
+}
