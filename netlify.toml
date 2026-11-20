@@ -24,11 +24,21 @@
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
+[[headers]]
+  for = "/tenant-resources/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 [[redirects]]
   from = "/README.md"
   to = "/404.html"
   status = 404
   force = true
+
+[[redirects]]
+  from = "/tenant-resources"
+  to = "/tenant-resources/"
+  status = 301
 
 [[redirects]]
   from = "/*"
