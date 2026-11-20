@@ -478,7 +478,7 @@ section[id] {
   border-top: 4px solid var(--accent);
 }
 
-.values h4 {
+.panel .values h3 {
   margin: 0 0 0.3rem;
   font-size: 1.05rem;
   color: var(--brand);

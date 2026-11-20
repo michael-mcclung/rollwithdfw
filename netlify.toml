@@ -29,6 +29,11 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+[[headers]]
+  for = "/about/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 [[redirects]]
   from = "/README.md"
   to = "/404.html"
@@ -38,6 +43,11 @@
 [[redirects]]
   from = "/tenant-resources"
   to = "/tenant-resources/"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/about/"
   status = 301
 
 [[redirects]]

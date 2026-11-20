@@ -6,6 +6,7 @@ Tenants can:
 
 - **Pay Rent** and **Request a Repair** via [Innago](https://auth.innago.com/login) (tenant login)
 - Open **Tenant Login** (same Innago sign-in, new tab) from the header or the home page
+- Read **[About](/about/)** for the mission, vision, and values
 - Read **[Tenant Resources](/tenant-resources/)** for sign-in steps, move-in and move-out checklists, house rules, and emergency contacts
 - **Email Mac** at `rollwithdfw@gmail.com`
 - Call the **emergency repair line** for urgent issues
