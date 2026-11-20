@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Roll With DFW — Tenant Hub</title>
   <meta name="description" content="Roll With DFW tenant hub: pay rent, request a repair through Innago, email the landlord, or call the emergency repair line.">
-  <meta name="theme-color" content="#0B3D4A">
+  <meta name="theme-color" content="#1A3C33">
   <link rel="canonical" href="https://www.rollwithdfw.com/">
   <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Roll With DFW">
@@ -21,7 +21,7 @@
   <meta name="twitter:title" content="Roll With DFW — Tenant Hub">
   <meta name="twitter:description" content="Pay rent, request a repair, email the landlord, or call for emergencies.">
   <meta name="twitter:image" content="https://www.rollwithdfw.com/og-image.png">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=20261121">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -30,20 +30,17 @@
     <div class="wrap">
       <div class="header-bar">
         <a class="brand" href="/">
-          <svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-            <rect width="64" height="64" rx="12" fill="#0B3D4A"></rect>
-            <path d="M12 40c8-18 16-18 24 0 4-10 8-10 16 0" fill="none" stroke="#F4F7F8" stroke-width="4" stroke-linecap="round"></path>
-            <circle cx="32" cy="22" r="6" fill="#E8A838"></circle>
-          </svg>
-          <span class="brand-text">
-            <span class="brand-name">Roll With DFW</span>
-            <span class="brand-tag">Tenant hub</span>
-          </span>
+          <picture>
+            <source srcset="/images/logo-mark.webp" type="image/webp">
+            <img class="brand-mark" src="/images/logo-mark.png" alt="" width="48" height="46">
+          </picture>
+          <span class="brand-name">Roll With DFW</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
           <ul>
+            <li><a href="/" aria-current="page">Home</a></li>
+            <li><a href="/about/">About</a></li>
             <li><a href="/tenant-resources/">Tenant Resources</a></li>
-            <li><a class="nav-login" href="https://auth.innago.com/login" target="_blank" rel="noopener noreferrer">Tenant Login<span class="visually-hidden"> (opens in a new tab)</span></a></li>
           </ul>
         </nav>
       </div>
@@ -52,40 +49,24 @@
 
   <main id="main" class="site-main">
     <div class="wrap">
-      <h1 class="visually-hidden">Roll With DFW tenant hub</h1>
-      <p class="intro">
-        Welcome. Use the buttons below to pay rent or request a repair in Innago,
-        or email Mac. For emergencies, call the repair line.
+      <h1 class="visually-hidden">Roll With DFW</h1>
+      <p class="hero">
+        <picture>
+          <source srcset="/images/logo-full.webp" type="image/webp">
+          <img class="hero-logo" src="/images/logo-full.png" width="720" height="530" alt="Roll With DFW rental homes. Roll with faith. Come home to peace.">
+        </picture>
       </p>
       <p class="intro">
-        <a href="/tenant-resources/">Tenant Resources</a> covers how to sign in,
-        move-in and move-out, house rules, and who to call.
+        Welcome. Use Portal Login to pay rent, request a repair, or read messages in Innago.
+        For emergencies, call the repair line.
+        <a href="/tenant-resources/">Tenant Resources</a> covers sign-in, move-in and move-out, and house rules.
       </p>
 
-      <nav aria-label="Tenant actions">
       <ul class="actions">
         <li>
-          <a class="btn btn-primary" href="https://auth.innago.com/login" target="_blank" rel="noopener noreferrer">
-            Pay Rent<span class="visually-hidden"> (opens in a new tab)</span>
-          </a>
-        </li>
-        <li>
-          <a class="btn btn-secondary" href="https://auth.innago.com/login" rel="noopener noreferrer">
-            Request a Repair
-          </a>
-        </li>
-        <li>
-          <a class="btn btn-outline" href="mailto:rollwithdfw@gmail.com">
-            Email Mac
-          </a>
-        </li>
-        <li>
-          <a class="btn btn-login" href="https://auth.innago.com/login" target="_blank" rel="noopener noreferrer">
-            Tenant Login<span class="visually-hidden"> (opens in a new tab)</span>
-          </a>
+          <a class="btn btn-primary" href="https://auth.innago.com/login" target="_blank" rel="noopener noreferrer" aria-label="Portal Login, opens in a new tab">Portal Login</a>
         </li>
       </ul>
-      </nav>
 
       <section class="panel emergency" aria-labelledby="emergency-heading">
         <h2 id="emergency-heading">Emergency repair line</h2>
@@ -108,15 +89,15 @@
           <summary>How do I pay rent?</summary>
           <p>
             Rent is paid online through Innago by bank transfer (ACH).
-            Use the <strong>Pay Rent</strong> button to open Innago’s tenant login.
+            Use <strong>Portal Login</strong> to open Innago.
+            <a href="/tenant-resources/">Tenant Resources</a> has the details.
           </p>
-          <!-- TODO: Add rent due date once Mac confirms what should appear on the site. -->
         </details>
 
         <details>
           <summary>How do I request a routine repair?</summary>
           <p>
-            Use <strong>Request a Repair</strong> to open Innago and submit your request there.
+            Use <strong>Portal Login</strong> and submit the request in Innago.
             That is the path for routine repairs such as HVAC, plumbing, or appliances.
           </p>
         </details>
@@ -133,15 +114,14 @@
           <summary>How do I contact Mac?</summary>
           <p>
             Email Mac at
-            <a href="mailto:rollwithdfw@gmail.com">rollwithdfw@gmail.com</a>
-            using the <strong>Email Mac</strong> button, or that address directly.
+            <a href="mailto:rollwithdfw@gmail.com">rollwithdfw@gmail.com</a>.
           </p>
         </details>
 
         <details>
           <summary>How do I sign in to Innago?</summary>
           <p>
-            Accept the invitation Innago emails you, then use <strong>Tenant Login</strong>
+            Accept the invitation Innago emails you, then use <strong>Portal Login</strong>
             to sign in on the web, or open the Innago app.
             <a href="/tenant-resources/">Tenant Resources</a> walks through the steps.
           </p>
@@ -152,6 +132,7 @@
 
   <footer class="site-footer">
     <div class="wrap">
+      <p class="tagline">Roll with faith. Come home to peace.</p>
       <p>&copy; 2026 Roll With DFW</p>
       <p>Payments and repair requests are handled by Innago. This site stores no login or payment data.</p>
     </div>

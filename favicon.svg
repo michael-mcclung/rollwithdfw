@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Roll With DFW">
-  <rect width="64" height="64" rx="12" fill="#0B3D4A"/>
-  <path d="M12 40c8-18 16-18 24 0 4-10 8-10 16 0" fill="none" stroke="#F4F7F8" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="32" cy="22" r="6" fill="#E8A838"/>
+  <rect width="64" height="64" rx="12" fill="#f3f5f1"/>
+  <path fill="#1a3c33" d="M32 8 8 28h8v24h12V36h8v16h12V28h8L32 8z"/>
+  <path fill="#c6a464" d="M14 50c6-8 10-8 14 0 3-5 6-5 8 0" fill-rule="evenodd"/>
+  <rect x="30" y="36" width="6" height="16" fill="#f3f5f1"/>
 </svg>

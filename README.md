@@ -6,6 +6,7 @@ Tenants can:
 
 - **Pay Rent** and **Request a Repair** via [Innago](https://auth.innago.com/login) (tenant login)
 - Open **Tenant Login** (same Innago sign-in, new tab) from the header or the home page
+- Read **[About](/about/)** for the mission, vision, and values
 - Read **[Tenant Resources](/tenant-resources/)** for sign-in steps, move-in and move-out checklists, house rules, and emergency contacts
 - **Email Mac** at `rollwithdfw@gmail.com`
 - Call the **emergency repair line** for urgent issues
@@ -30,6 +31,8 @@ Edit `index.html`, `tenant-resources/index.html`, and `404.html` if the header o
 ## Netlify deploy
 
 `netlify.toml` publishes the repo root (`.`) with **no build command** and **no Angular plugin**.
+
+`styles.css` is cached for a week. Pages load it as `/styles.css?v=...`. Bump that query in every HTML file when the stylesheet changes, or returning visitors keep the previous rules.
 
 Netlify auto-deploys the default branch (`main`) to **https://www.rollwithdfw.com**.
 
