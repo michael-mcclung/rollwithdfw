@@ -5,21 +5,26 @@ Static one-page site for tenants of **Roll With DFW** (one rental home in the DF
 Tenants can:
 
 - **Pay Rent** and **Request a Repair** via [Innago](https://auth.innago.com/login) (tenant login)
+- Open **Tenant Login** (same Innago sign-in, new tab) from the header or the home page
+- Read **[Tenant Resources](/tenant-resources/)** for sign-in steps, move-in and move-out checklists, house-rule placeholders, and emergency contacts
 - **Email Mac** at `rollwithdfw@gmail.com`
 - Call the **emergency repair line** for urgent issues
 
 This site is HTML/CSS only: no forms, no backend, no trackers, no secrets.
 
+`README.md` is not served on the live site (`netlify.toml` forces it to the 404 page).
+
 ## Changing contact details
 
-Edit `index.html` (and `404.html` if needed):
+Edit `index.html`, `tenant-resources/index.html`, and `404.html` if the header or footer repeats the detail:
 
 | What | Where |
 | --- | --- |
-| Phone | Search for `tel:+14697835078` and the visible `469-783-5078` |
+| Phone | Search for `tel:+12146394141` and the visible `(214) 639-4141` |
 | Email | Search for `mailto:rollwithdfw@gmail.com` and the visible address |
 | Innago login | Search for `https://auth.innago.com/login` |
 | Rent due date | Look for the HTML comment `TODO: Add rent due date` in the FAQ |
+| Owner placeholders | Search Tenant Resources for `[Owner to confirm]` |
 
 ## Netlify deploy
 

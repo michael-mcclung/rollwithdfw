@@ -16,17 +16,25 @@
 
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="/">
-        <svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <rect width="64" height="64" rx="12" fill="#0B3D4A"></rect>
-          <path d="M12 40c8-18 16-18 24 0 4-10 8-10 16 0" fill="none" stroke="#F4F7F8" stroke-width="4" stroke-linecap="round"></path>
-          <circle cx="32" cy="22" r="6" fill="#E8A838"></circle>
-        </svg>
-        <span class="brand-text">
-          <span class="brand-name">Roll With DFW</span>
-          <span class="brand-tag">Tenant hub</span>
-        </span>
-      </a>
+      <div class="header-bar">
+        <a class="brand" href="/">
+          <svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <rect width="64" height="64" rx="12" fill="#0B3D4A"></rect>
+            <path d="M12 40c8-18 16-18 24 0 4-10 8-10 16 0" fill="none" stroke="#F4F7F8" stroke-width="4" stroke-linecap="round"></path>
+            <circle cx="32" cy="22" r="6" fill="#E8A838"></circle>
+          </svg>
+          <span class="brand-text">
+            <span class="brand-name">Roll With DFW</span>
+            <span class="brand-tag">Tenant hub</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="/tenant-resources/">Tenant Resources</a></li>
+            <li><a class="nav-login" href="https://auth.innago.com/login" target="_blank" rel="noopener noreferrer">Tenant Login<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -48,6 +56,11 @@
   <footer class="site-footer">
     <div class="wrap">
       <p>&copy; 2026 Roll With DFW</p>
+      <p>
+        <a href="/tenant-resources/">Tenant Resources</a>
+        ·
+        <a href="https://auth.innago.com/login" target="_blank" rel="noopener noreferrer">Tenant Login<span class="visually-hidden"> (opens in a new tab)</span></a>
+      </p>
     </div>
   </footer>
 </body>

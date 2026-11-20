@@ -28,32 +28,45 @@
 
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="/">
-        <svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <rect width="64" height="64" rx="12" fill="#0B3D4A"></rect>
-          <path d="M12 40c8-18 16-18 24 0 4-10 8-10 16 0" fill="none" stroke="#F4F7F8" stroke-width="4" stroke-linecap="round"></path>
-          <circle cx="32" cy="22" r="6" fill="#E8A838"></circle>
-        </svg>
-        <span class="brand-text">
-          <span class="brand-name">Roll With DFW</span>
-          <span class="brand-tag">Tenant hub</span>
-        </span>
-      </a>
+      <div class="header-bar">
+        <a class="brand" href="/">
+          <svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <rect width="64" height="64" rx="12" fill="#0B3D4A"></rect>
+            <path d="M12 40c8-18 16-18 24 0 4-10 8-10 16 0" fill="none" stroke="#F4F7F8" stroke-width="4" stroke-linecap="round"></path>
+            <circle cx="32" cy="22" r="6" fill="#E8A838"></circle>
+          </svg>
+          <span class="brand-text">
+            <span class="brand-name">Roll With DFW</span>
+            <span class="brand-tag">Tenant hub</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="/tenant-resources/">Tenant Resources</a></li>
+            <li><a class="nav-login" href="https://auth.innago.com/login" target="_blank" rel="noopener noreferrer">Tenant Login<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main id="main" class="site-main">
     <div class="wrap">
+      <h1 class="visually-hidden">Roll With DFW tenant hub</h1>
       <p class="intro">
         Welcome. Use the buttons below to pay rent or request a repair in Innago,
         or email Mac. For emergencies, call the repair line.
+      </p>
+      <p class="intro">
+        <a href="/tenant-resources/">Tenant Resources</a> covers how to sign in,
+        move-in and move-out, house rules, and who to call.
       </p>
 
       <nav aria-label="Tenant actions">
       <ul class="actions">
         <li>
-          <a class="btn btn-primary" href="https://auth.innago.com/login" rel="noopener noreferrer">
-            Pay Rent
+          <a class="btn btn-primary" href="https://auth.innago.com/login" target="_blank" rel="noopener noreferrer">
+            Pay Rent<span class="visually-hidden"> (opens in a new tab)</span>
           </a>
         </li>
         <li>
@@ -64,6 +77,11 @@
         <li>
           <a class="btn btn-outline" href="mailto:rollwithdfw@gmail.com">
             Email Mac
+          </a>
+        </li>
+        <li>
+          <a class="btn btn-login" href="https://auth.innago.com/login" target="_blank" rel="noopener noreferrer">
+            Tenant Login<span class="visually-hidden"> (opens in a new tab)</span>
           </a>
         </li>
       </ul>
@@ -117,6 +135,15 @@
             Email Mac at
             <a href="mailto:rollwithdfw@gmail.com">rollwithdfw@gmail.com</a>
             using the <strong>Email Mac</strong> button, or that address directly.
+          </p>
+        </details>
+
+        <details>
+          <summary>How do I sign in to Innago?</summary>
+          <p>
+            Accept the invitation Innago emails you, then use <strong>Tenant Login</strong>
+            to sign in on the web, or open the Innago app.
+            <a href="/tenant-resources/">Tenant Resources</a> walks through the steps.
           </p>
         </details>
       </section>
