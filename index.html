@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Roll With DFW — Tenant Hub</title>
   <meta name="description" content="Roll With DFW tenant hub: pay rent, request a repair through Innago, email the landlord, or call the emergency repair line.">
-  <meta name="theme-color" content="#0B3D4A">
+  <meta name="theme-color" content="#1A3C33">
   <link rel="canonical" href="https://www.rollwithdfw.com/">
   <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Roll With DFW">
@@ -21,7 +21,7 @@
   <meta name="twitter:title" content="Roll With DFW — Tenant Hub">
   <meta name="twitter:description" content="Pay rent, request a repair, email the landlord, or call for emergencies.">
   <meta name="twitter:image" content="https://www.rollwithdfw.com/og-image.png">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=20261120">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -30,20 +30,16 @@
     <div class="wrap">
       <div class="header-bar">
         <a class="brand" href="/">
-          <svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-            <rect width="64" height="64" rx="12" fill="#0B3D4A"></rect>
-            <path d="M12 40c8-18 16-18 24 0 4-10 8-10 16 0" fill="none" stroke="#F4F7F8" stroke-width="4" stroke-linecap="round"></path>
-            <circle cx="32" cy="22" r="6" fill="#E8A838"></circle>
-          </svg>
-          <span class="brand-text">
-            <span class="brand-name">Roll With DFW</span>
-            <span class="brand-tag">Tenant hub</span>
-          </span>
+          <picture>
+            <source srcset="/images/logo-mark.webp" type="image/webp">
+            <img class="brand-mark" src="/images/logo-mark.png" alt="" width="48" height="46">
+          </picture>
+          <span class="brand-name">Roll With DFW</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
           <ul>
+            <li><a href="/" aria-current="page">Home</a></li>
             <li><a href="/tenant-resources/">Tenant Resources</a></li>
-            <li><a class="nav-login" href="https://auth.innago.com/login" target="_blank" rel="noopener noreferrer">Tenant Login<span class="visually-hidden"> (opens in a new tab)</span></a></li>
           </ul>
         </nav>
       </div>
@@ -52,7 +48,13 @@
 
   <main id="main" class="site-main">
     <div class="wrap">
-      <h1 class="visually-hidden">Roll With DFW tenant hub</h1>
+      <h1 class="visually-hidden">Roll With DFW</h1>
+      <p class="hero">
+        <picture>
+          <source srcset="/images/logo-full.webp" type="image/webp">
+          <img class="hero-logo" src="/images/logo-full.png" width="720" height="530" alt="Roll With DFW rental homes. Roll with faith. Come home to peace.">
+        </picture>
+      </p>
       <p class="intro">
         Welcome. Use the buttons below to pay rent or request a repair in Innago,
         or email Mac. For emergencies, call the repair line.
@@ -99,6 +101,42 @@
         <p>
           <strong>If you smell gas or there is a fire, call 911 first.</strong>
         </p>
+      </section>
+
+      <section class="panel about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Roll With DFW</h2>
+        <p class="tagline">Roll with faith. Come home to peace.</p>
+        <h3>Our mission</h3>
+        <p>Built on faith. Guided by integrity. Rooted in family. Growing a legacy for generations to come.</p>
+        <h3>Our vision</h3>
+        <p>Provide well-maintained rental homes in North Texas and steward the property in a way that creates financial stability and a legacy for future generations.</p>
+        <h3>Our values</h3>
+        <ul class="values">
+          <li>
+            <h4>Faith</h4>
+            <p>Faith guides how we treat people and property.</p>
+          </li>
+          <li>
+            <h4>Integrity</h4>
+            <p>We say what we mean and follow through.</p>
+          </li>
+          <li>
+            <h4>Family</h4>
+            <p>A home should be a steady place for the people who live in it.</p>
+          </li>
+          <li>
+            <h4>Stewardship</h4>
+            <p>We take care of what is entrusted to us.</p>
+          </li>
+          <li>
+            <h4>Long-term thinking</h4>
+            <p>We choose what should still hold up years from now.</p>
+          </li>
+          <li>
+            <h4>Responsible growth</h4>
+            <p>We take on only what we can look after well.</p>
+          </li>
+        </ul>
       </section>
 
       <section class="panel faq" aria-labelledby="faq-heading">
@@ -152,6 +190,7 @@
 
   <footer class="site-footer">
     <div class="wrap">
+      <p class="tagline">Roll with faith. Come home to peace.</p>
       <p>&copy; 2026 Roll With DFW</p>
       <p>Payments and repair requests are handled by Innago. This site stores no login or payment data.</p>
     </div>

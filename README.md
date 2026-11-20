@@ -31,6 +31,8 @@ Edit `index.html`, `tenant-resources/index.html`, and `404.html` if the header o
 
 `netlify.toml` publishes the repo root (`.`) with **no build command** and **no Angular plugin**.
 
+`styles.css` is cached for a week. Pages load it as `/styles.css?v=...`. Bump that query in every HTML file when the stylesheet changes, or returning visitors keep the previous rules.
+
 Netlify auto-deploys the default branch (`main`) to **https://www.rollwithdfw.com**.
 
 Merging a PR into `main` replaces the live site. Do not merge until Mac approves.
