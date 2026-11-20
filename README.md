@@ -6,7 +6,7 @@ Tenants can:
 
 - **Pay Rent** and **Request a Repair** via [Innago](https://auth.innago.com/login) (tenant login)
 - Open **Tenant Login** (same Innago sign-in, new tab) from the header or the home page
-- Read **[Tenant Resources](/tenant-resources/)** for sign-in steps, move-in and move-out checklists, house-rule placeholders, and emergency contacts
+- Read **[Tenant Resources](/tenant-resources/)** for sign-in steps, move-in and move-out checklists, house rules, and emergency contacts
 - **Email Mac** at `rollwithdfw@gmail.com`
 - Call the **emergency repair line** for urgent issues
 
@@ -23,8 +23,9 @@ Edit `index.html`, `tenant-resources/index.html`, and `404.html` if the header o
 | Phone | Search for `tel:+12146394141` and the visible `(214) 639-4141` |
 | Email | Search for `mailto:rollwithdfw@gmail.com` and the visible address |
 | Innago login | Search for `https://auth.innago.com/login` |
-| Rent due date | Look for the HTML comment `TODO: Add rent due date` in the FAQ |
-| Owner placeholders | Search Tenant Resources for `[Owner to confirm]` |
+| Rent due date | Tenant Resources states the 1st. Do not publish the rent amount, deposit, or fees. The home FAQ still has the comment `TODO: Add rent due date` if that date should also appear there. |
+| Emergency phone | Keep `(214) 639-4141`. Do not replace it with any other number from the lease. |
+| Street address and names | Do not add the property address or a tenant’s name to the site. |
 
 ## Netlify deploy
 
